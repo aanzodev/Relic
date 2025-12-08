@@ -9,6 +9,7 @@
 - <a href="https://github.com/JustJxrdanWasDefinetlyTaken">Jordan</a> (Developer)
 - <a href="https://github.com/Coding4Hours">Coding4Hours</a> (Developer)
 - Sai (Developer)
+- David (Some image assets)
 
 ### Features
 - 100+ Games
