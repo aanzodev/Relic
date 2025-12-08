@@ -148,9 +148,9 @@ function applyTheme(themeName) {
     'dark': {
       bg: '#000000',
       sidebar: '#4f4f4f',
-      nav: '#1e293b',
+      nav: '#ababab',
       text: '#ffffff',
-      accent: '#38bdf8',
+      accent: '#5c5c5c',
       border: '#8f8f8f'
     },
     'light': {
