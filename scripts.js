@@ -133,9 +133,9 @@ function applyTabCloaking(title, favicon) {
   }
 }
 
-//  THEME SYSTEM
+//  THEME SYSTEM WITH DATA ATTRIBUTES =====
 function applyTheme(themeName) {
-  // Define all themes
+  // Define all theme colors
   const themes = {
     'original': {
       bg: '#1e3a8a',
@@ -310,21 +310,6 @@ function applyTheme(themeName) {
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
       metaThemeColor.setAttribute('content', themeColors.bg);
-    }
-  }, 50);
-  
-  // Save to localStorage
-  localStorage.setItem('selectedTheme', themeName);
-  
-  console.log('Theme applied:', themeName);
-}
-  
-  // Also set theme-color meta tag
-  setTimeout(() => {
-    const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color');
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-    if (metaThemeColor && bgColor) {
-      metaThemeColor.setAttribute('content', bgColor.trim());
     }
   }, 50);
   
