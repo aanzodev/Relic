@@ -535,6 +535,9 @@
   <!-- Loader for the theme-switcher.js -->
   <script src="others/assets/js/theme-switcher.js"></script>
 
+  <!-- DYNAMIC SIDEBAR THEME - MUST BE AFTER theme-switcher.js -->
+  <script src="others/assets/js/dyncsidebar.js"></script>
+
   <!-- 6. Main scripts (with Fingerprint ID protection integrated) -->
   <script src="scripts.js"></script>
 
@@ -608,11 +611,7 @@
   <!-- PROXY BROWSER FUNCTIONALITY -->
   <script>
     (function() {
-      // ⚠️ CRITICAL: Configure your proxy URL here
-      // Replace with your actual Scramjet proxy endpoint
-      // Example: const PROXY_URL = 'https://your-domain.com/scramjet/';
-      // If running locally: const PROXY_URL = '/scramjet/';
-      const PROXY_URL = '/tinyjet/'; // CHANGE THIS TO YOUR PROXY URL
+      const PROXY_URL = '/tinyjet/';
       
       const proxyIframe = document.getElementById('proxyIframe');
       const urlInput = document.getElementById('proxyUrlInput');
@@ -624,50 +623,40 @@
       const loadingIndicator = document.getElementById('loadingIndicator');
       const proxyWelcome = document.getElementById('proxyWelcome');
 
-      // Load URL through proxy
       function loadProxyUrl(url) {
         if (!url || !url.trim()) return;
         
         let finalUrl = url.trim();
 
-        // Hide welcome message
         if (proxyWelcome) {
           proxyWelcome.style.display = 'none';
         }
 
-        // If not a URL, treat as search query
         if (!finalUrl.includes('.') && !finalUrl.startsWith('http')) {
           finalUrl = `https://duckduckgo.com/?q=${encodeURIComponent(finalUrl)}`;
         }
 
-        // Add https if missing
         if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
           finalUrl = 'https://' + finalUrl;
         }
 
-        // Update URL bar
         urlInput.value = finalUrl;
 
-        // Show loading
         if (loadingIndicator) {
           loadingIndicator.classList.add('active');
         }
 
-        // Load through Scramjet proxy
-        // The proxy will encode and handle the URL
         const proxiedUrl = PROXY_URL + encodeURIComponent(finalUrl);
         
         console.log('Loading proxied URL:', proxiedUrl);
         proxyIframe.src = proxiedUrl;
 
-        // Hide loading after iframe loads
         proxyIframe.onload = function() {
           if (loadingIndicator) {
             loadingIndicator.classList.remove('active');
           }
         };
 
-        // Fallback: hide loading after 3 seconds
         setTimeout(() => {
           if (loadingIndicator) {
             loadingIndicator.classList.remove('active');
@@ -675,7 +664,6 @@
         }, 3000);
       }
 
-      // Event listeners
       if (goBtn && urlInput) {
         goBtn.addEventListener('click', () => {
           const url = urlInput.value;
@@ -730,59 +718,6 @@
         });
       }
 
-      // Focus input when search page is shown
       const searchLink = document.getElementById('searchLink');
       if (searchLink) {
-        searchLink.addEventListener('click', () => {
-          setTimeout(() => {
-            if (urlInput) urlInput.focus();
-          }, 100);
-        });
-      }
-
-      console.log('Proxy browser initialized with URL:', PROXY_URL);
-    })();
-  </script>
-
-  <!-- Iframe control functions -->
-  <script>
-    function reload() {
-      const iframe = document.querySelector("iframe");
-      if (iframe) {
-        try {
-          iframe.contentWindow.location.reload(true);
-        } catch (error) {
-          console.log('Reloading iframe via src...', error);
-          iframe.src = iframe.src;
-        }
-      } else {
-        console.warn('No iframe found to reload');
-      }
-    }
-
-    function historyBack() {
-      const iframe = document.querySelector("iframe");
-      if (iframe) {
-        try {
-          iframe.contentWindow.history.back();
-        } catch (error) {
-          console.warn('Cannot navigate back in iframe:', error);
-        }
-      }
-    }
-
-    function historyForward() {
-      const iframe = document.querySelector("iframe");
-      if (iframe) {
-        try {
-          iframe.contentWindow.history.forward();
-        } catch (error) {
-          console.warn('Cannot navigate forward in iframe:', error);
-        }
-      }
-    }
-  </script>
-
-</body>
-
-</html>
+        searchLink.
