@@ -1,5 +1,5 @@
 // 70/30
-// SEASONAL THEME SYSTEM (BUILT-IN)
+// SEASONAL Tehesm sysnte
 function getSeasonalTheme() {
   const now = new Date();
   const month = now.getMonth();
@@ -21,7 +21,7 @@ function getSeasonalTheme() {
     return 'light';
   }
   
-  return 'modern';
+  return 'original';
 }
 
 function shouldAutoApplySeasonalTheme() {
@@ -29,7 +29,7 @@ function shouldAutoApplySeasonalTheme() {
   return autoApply !== 'false';
 }
 
-// ===== ABOUT:BLANK CLOAKING =====
+//  ABOUT:BLANK CLOAKING 
 (function() {
   const aboutBlankEnabled = localStorage.getItem('aboutBlank');
   const isInAboutBlank = window.self !== window.top;
@@ -59,7 +59,7 @@ function shouldAutoApplySeasonalTheme() {
   }
 })();
 
-// ===== TAB CLOAKING PRESETS =====
+//  TAB CLOAKING PRESETS =====
 const presets = {
   google: { title: "Google", favicon: "https://www.google.com/favicon.ico" },
   classroom: { title: "Home", favicon: "https://ssl.gstatic.com/classroom/favicon.png" },
@@ -70,118 +70,7 @@ const presets = {
   chrome: { title: "New Tab", favicon: "https://www.google.com/favicon.ico" }
 };
 
-// ===== THEME CONFIGURATIONS =====
-const themes = {
-  modern: { 
-    bgColor: '#0f172a', 
-    bgSecondary: '#1e293b',
-    navColor: '#1e1b4b', 
-    accentColor: '#7c3aed',
-    accentSecondary: '#a78bfa',
-    accentTertiary: '#4f46e5',
-    textColor: '#f8fafc', 
-    textMuted: '#94a3b8',
-    borderColor: '#334155', 
-    hoverBg: '#2e3a58', 
-    btnBg: '#334155', 
-    btnHoverBg: '#4f46e5',
-    glassBg: 'rgba(30, 41, 59, 0.8)',
-    glassBorder: 'rgba(124, 58, 237, 0.25)',
-    shadowGlow: '0 0 25px rgba(124, 58, 237, 0.4)'
-  },
-  
-  halloween: { 
-    bgColor: '#1a0a0a',
-    bgSecondary: '#2a1a1a',
-    navColor: '#2a0f0a', 
-    accentColor: '#ff6b00',
-    accentSecondary: '#ff9e4f',
-    accentTertiary: '#ff3d00',
-    textColor: '#ffd6a5',
-    textMuted: '#c8a17a',
-    borderColor: '#4a2a1a',
-    hoverBg: '#3a1a0a',
-    btnBg: '#4a2a1a',
-    btnHoverBg: '#ff6b00',
-    glassBg: 'rgba(42, 16, 10, 0.8)',
-    glassBorder: 'rgba(255, 107, 0, 0.25)',
-    shadowGlow: '0 0 25px rgba(255, 107, 0, 0.4)'
-  },
-  
-  christmas: { 
-    bgColor: '#0a1a12',
-    bgSecondary: '#1a2a22',
-    navColor: '#1a0a12', 
-    accentColor: '#e63946',
-    accentSecondary: '#ff758f',
-    accentTertiary: '#c1121f',
-    textColor: '#f8f9fa',
-    textMuted: '#a8c6a8',
-    borderColor: '#2a4a3a',
-    hoverBg: '#1a2a22',
-    btnBg: '#2a4a3a',
-    btnHoverBg: '#e63946',
-    glassBg: 'rgba(26, 42, 34, 0.8)',
-    glassBorder: 'rgba(230, 57, 70, 0.25)',
-    shadowGlow: '0 0 25px rgba(230, 57, 70, 0.4)'
-  },
-  
-  midnight: { 
-    bgColor: '#0f0f23',
-    bgSecondary: '#1a1a2e',
-    navColor: '#1a1b4b', 
-    accentColor: '#9d4edd',
-    accentSecondary: '#c77dff',
-    accentTertiary: '#7b2cbf',
-    textColor: '#e0e0e0',
-    textMuted: '#a0a0c0',
-    borderColor: '#3c3c5a',
-    hoverBg: '#2a2a4e',
-    btnBg: '#3c3c6f',
-    btnHoverBg: '#9d4edd',
-    glassBg: 'rgba(26, 26, 46, 0.8)',
-    glassBorder: 'rgba(157, 78, 221, 0.25)',
-    shadowGlow: '0 0 25px rgba(157, 78, 221, 0.4)'
-  },
-  
-  ocean: { 
-    bgColor: '#001f3f',
-    bgSecondary: '#0a2f4f',
-    navColor: '#0a1f4f', 
-    accentColor: '#00d4ff',
-    accentSecondary: '#7ae7ff',
-    accentTertiary: '#00a3cc',
-    textColor: '#cfe2f3',
-    textMuted: '#8fa8c7',
-    borderColor: '#1a4f6f',
-    hoverBg: '#1a3f5f',
-    btnBg: '#2a5f7f',
-    btnHoverBg: '#00d4ff',
-    glassBg: 'rgba(10, 47, 79, 0.8)',
-    glassBorder: 'rgba(0, 212, 255, 0.25)',
-    shadowGlow: '0 0 25px rgba(0, 212, 255, 0.4)'
-  },
-  
-  light: { 
-    bgColor: '#f8fafc',
-    bgSecondary: '#e2e8f0',
-    navColor: '#ffffff', 
-    accentColor: '#4f46e5',
-    accentSecondary: '#7c73e6',
-    accentTertiary: '#3b3bff',
-    textColor: '#1e293b',
-    textMuted: '#64748b',
-    borderColor: '#cbd5e1',
-    hoverBg: '#e2e8f0',
-    btnBg: '#e2e8f0',
-    btnHoverBg: '#4f46e5',
-    glassBg: 'rgba(255, 255, 255, 0.8)',
-    glassBorder: 'rgba(203, 213, 225, 0.5)',
-    shadowGlow: '0 0 15px rgba(99, 102, 241, 0.2)'
-  }
-};
-
-// ===== SNOW EFFECT =====
+//  SNOW EFFECT =====
 let snowEnabled = true;
 let snowInterval = null;
 
@@ -226,7 +115,7 @@ function stopSnow() {
   if (snowContainer) snowContainer.innerHTML = '';
 }
 
-// ===== TAB CLOAKING =====
+//  TAB CLOAKING =====
 function applyTabCloaking(title, favicon) {
   if (title) {
     document.title = title;
@@ -244,36 +133,27 @@ function applyTabCloaking(title, favicon) {
   }
 }
 
-// ===== THEME SYSTEM =====
+//  THEME SYSTEM WITH DATA ATTRIBUTES =====
 function applyTheme(themeName) {
-  const theme = themes[themeName] || themes.modern;
+  // Set the data-theme attribute on html element
+  document.documentElement.setAttribute('data-theme', themeName);
   
-  const root = document.documentElement;
-  root.style.setProperty('--bg-color', theme.bgColor);
-  root.style.setProperty('--bg-secondary', theme.bgSecondary || theme.bgColor);
-  root.style.setProperty('--nav-color', theme.navColor);
-  root.style.setProperty('--accent-color', theme.accentColor);
-  root.style.setProperty('--accent-secondary', theme.accentSecondary || theme.accentColor);
-  root.style.setProperty('--accent-tertiary', theme.accentTertiary || theme.accentColor);
-  root.style.setProperty('--text-color', theme.textColor);
-  root.style.setProperty('--text-muted', theme.textMuted || theme.textColor + 'b3');
-  root.style.setProperty('--border-color', theme.borderColor);
-  root.style.setProperty('--hover-bg', theme.hoverBg);
-  root.style.setProperty('--btn-bg', theme.btnBg);
-  root.style.setProperty('--btn-hover-bg', theme.btnHoverBg || theme.accentColor);
-  root.style.setProperty('--glass-bg', theme.glassBg || theme.navColor + 'cc');
-  root.style.setProperty('--glass-border', theme.glassBorder || theme.accentColor + '40');
-  root.style.setProperty('--shadow-glow', theme.shadowGlow || '0 0 25px ' + theme.accentColor + '66');
+  // Also set theme-color meta tag
+  setTimeout(() => {
+    const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color');
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor && bgColor) {
+      metaThemeColor.setAttribute('content', bgColor.trim());
+    }
+  }, 50);
   
-  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-  if (metaThemeColor) {
-    metaThemeColor.setAttribute('content', theme.bgColor);
-  }
-  
+  // Save to localStorage
   localStorage.setItem('selectedTheme', themeName);
+  
+  console.log('Theme applied:', themeName);
 }
 
-// ===== LOAD SETTINGS =====
+//  LOAD SETTINGS =====
 function loadSettings() {
   let themeToUse = 'original';
   const savedTheme = localStorage.getItem('selectedTheme');
@@ -328,10 +208,11 @@ function loadSettings() {
     aboutBlankToggle.checked = savedAboutBlank === 'enabled';
   }
 
+  // Apply theme
   applyTheme(themeToUse);
 }
 
-// ===== PANIC BUTTON =====
+//  PANIC BUTTON =====
 function setupPanicButton() {
   const savedHotkey = localStorage.getItem('hotkey') || '`';
   const savedRedirect = localStorage.getItem('redirectURL') || 'https://google.com';
@@ -377,7 +258,7 @@ function setupPanicButton() {
   }
 }
 
-// ===== UTILITY FUNCTIONS =====
+//  UTILITY FUNCTIONS =====
 function debounce(func, delay) {
   delay = delay || 300;
   let timeout;
@@ -396,7 +277,7 @@ function hideAll() {
   if (infoButtons) infoButtons.style.display = 'none';
 }
 
-// ===== NAVIGATION FUNCTIONS =====
+//  NAVIGATION FUNCTIONS =====
 function showHome() {
   hideAll();
   const homeContent = document.getElementById('content-home');
@@ -486,10 +367,20 @@ function showSettings() {
   if (settingsLink) settingsLink.classList.add('active');
 }
 
-// Only showing the fixed loadgame smth function and renderGames function
+function showEmulated() {
+  hideAll();
+  const emulatedContent = document.getElementById('content-emulated');
+  if (emulatedContent) emulatedContent.style.display = 'block';
+  const emulatedLink = document.getElementById('emulatedLink');
+  if (emulatedLink) emulatedLink.classList.add('active');
+  
+  if (typeof emulatedGames !== 'undefined' && Array.isArray(emulatedGames)) {
+    renderEmulatedGames(emulatedGames);
+  }
+}
 
+//  GAME LOADING AND RENDERING =====
 function loadGame(urlOrGame) {
-  // Handle both url. Anzo is inactive LOL XD.  strings and game objects
   let url;
   
   if (typeof urlOrGame === 'string') {
@@ -571,11 +462,36 @@ function renderGames(gamesToRender) {
     card.tabIndex = 0;
     card.innerHTML = (window.GameStats ? window.GameStats.createFavoriteButton(game.url, isFavorited) : '') + '<img src="' + (game.image || 'https://via.placeholder.com/250x250?text=Game') + '" alt="' + game.name + '" loading="lazy" /><h3>' + game.name + '</h3>';
     
-    // Pass the URL string instead of calling loadGame with the entire game object
     card.onclick = () => loadGame(game.url);
     card.onkeypress = (e) => { if (e.key === 'Enter') loadGame(game.url); };
     
     gameList.appendChild(card);
+  });
+}
+
+function renderEmulatedGames(gamesToRender) {
+  const emulatedList = document.getElementById('emulated-list');
+  if (!emulatedList) return;
+  
+  emulatedList.innerHTML = '';
+  
+  if (!gamesToRender || gamesToRender.length === 0) {
+    emulatedList.innerHTML = '<p style="padding: 20px; text-align: center;">No emulated games found.</p>';
+    return;
+  }
+  
+  gamesToRender.forEach(game => {
+    if (!game || !game.name || !game.url) return;
+    
+    const card = document.createElement('div');
+    card.className = 'game-card';
+    card.tabIndex = 0;
+    card.innerHTML = '<img src="' + (game.image || 'https://via.placeholder.com/250x250?text=Game') + '" alt="' + game.name + '" loading="lazy" /><h3>' + game.name + '</h3>';
+    
+    card.onclick = () => loadGame(game.url);
+    card.onkeypress = (e) => { if (e.key === 'Enter') loadGame(game.url); };
+    
+    emulatedList.appendChild(card);
   });
 }
 
@@ -641,55 +557,7 @@ function renderWebsites(websitesToRender) {
   websitesList.appendChild(list);
 }
 
-function loadGame(url) {
-  if (!url) {
-    console.error('No URL provided');
-    alert('Error: Game URL is missing.');
-    return;
-  }
-  
-  try {
-    const isYouTube = url.includes('/others/assets/apps/YouTube.html') || url.includes('youtu.be');
-    
-    if (isYouTube) {
-      window.open(url, '_blank');
-      return;
-    }
-    
-    hideAll();
-    const gameDisplay = document.getElementById('game-display');
-    const gameIframe = document.getElementById('game-iframe');
-    
-    if (!gameDisplay || !gameIframe) {
-      console.error('Game display elements not found');
-      alert('Error: Unable to load game.');
-      return;
-    }
-    
-    if (window.GameStats) {
-      window.GameStats.stopTracking();
-    }
-    
-    gameIframe.src = '';
-    gameIframe.src = url;
-    gameDisplay.style.display = 'block';
-    
-    gameIframe.onload = function() {
-      if (window.GameStats) {
-        window.GameStats.startTracking(url);
-      }
-    };
-    
-    gameIframe.onerror = function() {
-      console.error('Failed to load game:', url);
-      alert('Error loading game.');
-    };
-  } catch (error) {
-    console.error('Error in loadGame:', error);
-    alert('An error occurred while loading the game.');
-  }
-}
-
+//  SEARCH FUNCTIONS =====
 function searchGames() {
   const searchInput = document.getElementById('searchInput');
   if (!searchInput) return;
@@ -708,6 +576,26 @@ function searchGames() {
   
   const filtered = games.filter(game => game && game.name && game.name.toLowerCase().includes(query));
   renderGames(filtered);
+}
+
+function searchEmulatedGames() {
+  const searchInput = document.getElementById('searchEmulatedInput');
+  if (!searchInput) return;
+  
+  const query = searchInput.value.toLowerCase().trim();
+  
+  if (typeof emulatedGames === 'undefined' || !Array.isArray(emulatedGames)) {
+    console.error('emulatedGames array not found');
+    return;
+  }
+  
+  if (!query) {
+    renderEmulatedGames(emulatedGames);
+    return;
+  }
+  
+  const filtered = emulatedGames.filter(game => game && game.name && game.name.toLowerCase().includes(query));
+  renderEmulatedGames(filtered);
 }
 
 function searchWebsites() {
@@ -748,6 +636,7 @@ function toggleFullscreen() {
   }
 }
 
+//  INITIALIZATION =====
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initializeApp);
 } else {
@@ -760,6 +649,7 @@ function initializeApp() {
     showHome();
     setupPanicButton();
 
+    // Theme Select Handler
     const themeSelect = document.getElementById('themeSelect');
     if (themeSelect) {
       const savedTheme = localStorage.getItem('selectedTheme');
@@ -774,10 +664,10 @@ function initializeApp() {
       themeSelect.addEventListener('change', (e) => {
         const theme = e.target.value;
         applyTheme(theme);
-        localStorage.setItem('selectedTheme', theme);
       });
     }
 
+    // Modal Handlers
     const creditsBtn = document.getElementById('creditsBtn');
     const updateLogBtn = document.getElementById('updateLogBtn');
     const creditsModal = document.getElementById('creditsModal');
@@ -811,6 +701,7 @@ function initializeApp() {
       }
     };
 
+    // Tab Cloaking Handlers
     const applyBtn = document.getElementById('applyBtn');
     if (applyBtn) {
       applyBtn.addEventListener('click', () => {
@@ -855,6 +746,7 @@ function initializeApp() {
       });
     }
 
+    // Snow Toggle
     const snowToggle = document.getElementById('snowToggle');
     if (snowToggle) {
       snowToggle.addEventListener('change', (e) => {
@@ -868,6 +760,7 @@ function initializeApp() {
       });
     }
 
+    // About Blank Toggle
     const aboutBlankToggle = document.getElementById('aboutBlankToggle');
     if (aboutBlankToggle) {
       aboutBlankToggle.addEventListener('change', (e) => {
@@ -879,25 +772,24 @@ function initializeApp() {
       });
     }
 
+    // Navigation Links
     const homeLink = document.getElementById('homeLink');
     const gameLink = document.getElementById('gameLink');
+    const emulatedLink = document.getElementById('emulatedLink');
     const appsLink = document.getElementById('appsLink');
-    const websitesLink = document.getElementById('websitesLink');
-    const settingsLink = document.getElementById('settingsLink');
-    const aboutLink = document.getElementById('aboutLink');
     const searchLink = document.getElementById('searchLink');
+    const settingsLink = document.getElementById('settingsLink');
 
     if (homeLink) homeLink.addEventListener('click', (e) => { e.preventDefault(); showHome(); });
     if (gameLink) gameLink.addEventListener('click', (e) => { e.preventDefault(); showGames(); });
+    if (emulatedLink) emulatedLink.addEventListener('click', (e) => { e.preventDefault(); showEmulated(); });
     if (appsLink) appsLink.addEventListener('click', (e) => { e.preventDefault(); showApps(); });
-    if (websitesLink) websitesLink.addEventListener('click', (e) => { e.preventDefault(); showWebsites(); });
-    if (settingsLink) settingsLink.addEventListener('click', (e) => { e.preventDefault(); showSettings(); });
-    if (aboutLink) aboutLink.addEventListener('click', (e) => { e.preventDefault(); showAbout(); });
     if (searchLink) searchLink.addEventListener('click', (e) => { e.preventDefault(); showSearch(); });
+    if (settingsLink) settingsLink.addEventListener('click', (e) => { e.preventDefault(); showSettings(); });
 
+    // Back to Home Buttons
     const backToHomeGame = document.getElementById('backToHomeGame');
     const backToHomeApps = document.getElementById('backToHomeApps');
-    const backToHomeWebsites = document.getElementById('backToHomeWebsites');
     
     if (backToHomeGame) {
       backToHomeGame.addEventListener('click', () => {
@@ -911,11 +803,8 @@ function initializeApp() {
     if (backToHomeApps) {
       backToHomeApps.addEventListener('click', () => showHome());
     }
-    
-    if (backToHomeWebsites) {
-      backToHomeWebsites.addEventListener('click', () => showHome());
-    }
 
+    // Search Handlers for Games
     const searchBtn = document.getElementById('searchBtn');
     const searchInput = document.getElementById('searchInput');
     
@@ -930,26 +819,28 @@ function initializeApp() {
       searchInput.addEventListener('input', debounce(searchGames, 300));
     }
 
-    const websitesSearchBtn = document.getElementById('websitesSearchBtn');
-    const websitesSearchInput = document.getElementById('websitesSearchInput');
+    // Search Handlers for Emulated Games
+    const searchEmulatedBtn = document.getElementById('searchEmulatedBtn');
+    const searchEmulatedInput = document.getElementById('searchEmulatedInput');
     
-    if (websitesSearchBtn) {
-      websitesSearchBtn.addEventListener('click', searchWebsites);
+    if (searchEmulatedBtn) {
+      searchEmulatedBtn.addEventListener('click', searchEmulatedGames);
     }
     
-    if (websitesSearchInput) {
-      websitesSearchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') searchWebsites();
+    if (searchEmulatedInput) {
+      searchEmulatedInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') searchEmulatedGames();
       });
-      websitesSearchInput.addEventListener('input', debounce(searchWebsites, 300));
+      searchEmulatedInput.addEventListener('input', debounce(searchEmulatedGames, 300));
     }
 
+    // Fullscreen Button
     const fullscreenBtn = document.getElementById('fullscreenBtn');
     if (fullscreenBtn) {
       fullscreenBtn.addEventListener('click', toggleFullscreen);
     }
   } catch (error) {
     console.error('Critical error during initialization:', error);
-    alert('An error occurred during initialization. Check console.');
+    alert('An error occurred during initialization. Check console for errors pls.');
   }
 }
