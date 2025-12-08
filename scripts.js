@@ -133,10 +133,191 @@ function applyTabCloaking(title, favicon) {
   }
 }
 
-//  THEME SYSTEM WITH DATA ATTRIBUTES =====
+//  THEME SYSTEM
 function applyTheme(themeName) {
+  // Define all themes
+  const themes = {
+    'original': {
+      bg: '#1e3a8a',
+      sidebar: '#1e40af',
+      nav: '#1e3a8a',
+      text: '#ffffff',
+      accent: '#60a5fa',
+      border: '#3b82f6'
+    },
+    'dark': {
+      bg: '#0f172a',
+      sidebar: '#1e293b',
+      nav: '#1e293b',
+      text: '#f1f5f9',
+      accent: '#38bdf8',
+      border: '#334155'
+    },
+    'light': {
+      bg: '#f8fafc',
+      sidebar: '#e2e8f0',
+      nav: '#ffffff',
+      text: '#0f172a',
+      accent: '#3b82f6',
+      border: '#cbd5e1'
+    },
+    'midnight': {
+      bg: '#0c0a1f',
+      sidebar: '#1a1535',
+      nav: '#1a1535',
+      text: '#e0d8ff',
+      accent: '#a78bfa',
+      border: '#4c1d95'
+    },
+    'ocean': {
+      bg: '#0c4a6e',
+      sidebar: '#075985',
+      nav: '#0e7490',
+      text: '#e0f2fe',
+      accent: '#22d3ee',
+      border: '#0891b2'
+    },
+    'sunset': {
+      bg: '#7c2d12',
+      sidebar: '#9a3412',
+      nav: '#c2410c',
+      text: '#fed7aa',
+      accent: '#fb923c',
+      border: '#ea580c'
+    },
+    'forest': {
+      bg: '#14532d',
+      sidebar: '#166534',
+      nav: '#15803d',
+      text: '#dcfce7',
+      accent: '#4ade80',
+      border: '#22c55e'
+    },
+    'purple': {
+      bg: '#581c87',
+      sidebar: '#6b21a8',
+      nav: '#7e22ce',
+      text: '#f3e8ff',
+      accent: '#c084fc',
+      border: '#a855f7'
+    },
+    'cyberpunk': {
+      bg: '#1a0b2e',
+      sidebar: '#2d1b4e',
+      nav: '#16213e',
+      text: '#00ff9f',
+      accent: '#ff006e',
+      border: '#7b2cbf'
+    },
+    'matrix': {
+      bg: '#0d0d0d',
+      sidebar: '#1a1a1a',
+      nav: '#1a1a1a',
+      text: '#00ff41',
+      accent: '#00ff41',
+      border: '#003b00'
+    },
+    'neon': {
+      bg: '#120458',
+      sidebar: '#2d1b69',
+      nav: '#1a0b3a',
+      text: '#ffffff',
+      accent: '#ff10f0',
+      border: '#39ff14'
+    },
+    'fire': {
+      bg: '#7f1d1d',
+      sidebar: '#991b1b',
+      nav: '#b91c1c',
+      text: '#fef2f2',
+      accent: '#fbbf24',
+      border: '#f59e0b'
+    },
+    'ice': {
+      bg: '#0c4a6e',
+      sidebar: '#075985',
+      nav: '#0369a1',
+      text: '#e0f2fe',
+      accent: '#7dd3fc',
+      border: '#0ea5e9'
+    },
+    'retro': {
+      bg: '#422006',
+      sidebar: '#713f12',
+      nav: '#854d0e',
+      text: '#fef3c7',
+      accent: '#fbbf24',
+      border: '#f59e0b'
+    },
+    'halloween': {
+      bg: '#1a0b2e',
+      sidebar: '#2d1b4e',
+      nav: '#3d2652',
+      text: '#f9a8d4',
+      accent: '#ff6b35',
+      border: '#ff006e'
+    },
+    'christmas': {
+      bg: '#7f1d1d',
+      sidebar: '#991b1b',
+      nav: '#15803d',
+      text: '#fef2f2',
+      accent: '#4ade80',
+      border: '#22c55e'
+    }
+  };
+
+  // Get the theme colors, fallback to original if not found
+  const themeColors = themes[themeName] || themes['original'];
+  
   // Set the data-theme attribute on html element
   document.documentElement.setAttribute('data-theme', themeName);
+  
+  // CRITICAL FIX: Apply colors directly to the body and main elements
+  document.body.style.backgroundColor = themeColors.bg;
+  document.body.style.color = themeColors.text;
+  
+  // Apply to sidebar
+  const sidebar = document.querySelector('.sidebar');
+  if (sidebar) {
+    sidebar.style.backgroundColor = themeColors.sidebar;
+  }
+  
+  // Apply to all content sections
+  const contentSections = document.querySelectorAll('.content');
+  contentSections.forEach(section => {
+    section.style.backgroundColor = themeColors.bg;
+    section.style.color = themeColors.text;
+  });
+  
+  // Apply to navigation elements
+  const navElements = document.querySelectorAll('.sidebar-link');
+  navElements.forEach(nav => {
+    nav.style.color = themeColors.text;
+  });
+  
+  // Update CSS custom properties for dynamic usage
+  const root = document.documentElement;
+  root.style.setProperty('--bg-color', themeColors.bg);
+  root.style.setProperty('--sidebar-color', themeColors.sidebar);
+  root.style.setProperty('--nav-color', themeColors.nav);
+  root.style.setProperty('--text-color', themeColors.text);
+  root.style.setProperty('--accent-color', themeColors.accent);
+  root.style.setProperty('--border-color', themeColors.border);
+  
+  // Also set theme-color meta tag
+  setTimeout(() => {
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', themeColors.bg);
+    }
+  }, 50);
+  
+  // Save to localStorage
+  localStorage.setItem('selectedTheme', themeName);
+  
+  console.log('Theme applied:', themeName);
+}
   
   // Also set theme-color meta tag
   setTimeout(() => {
