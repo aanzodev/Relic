@@ -541,6 +541,59 @@
   <!-- Homepage scroll functionality -->
   <script src="others/assets/scripts/homepage/homescroll.js"></script>
 
+  <!-- AUTO-SHOW UPDATE LOG ON PAGE LOAD -->
+  <script>
+    // Wait for DOM to be fully loaded
+    window.addEventListener('DOMContentLoaded', function() {
+      // Small delay to ensure all scripts are loaded
+      setTimeout(function() {
+        const updateLogModal = document.getElementById('updateLogModal');
+        if (updateLogModal) {
+          updateLogModal.style.display = 'flex';
+          console.log('Update log modal displayed automatically');
+        }
+      }, 500); // 500ms delay
+    });
+
+    // Keep existing modal close functionality
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('info-close')) {
+        const modalId = e.target.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.style.display = 'none';
+        }
+      }
+      
+      // Also close if clicking outside the modal content
+      if (e.target.classList.contains('info-modal')) {
+        e.target.style.display = 'none';
+      }
+    });
+
+    // Button to manually open update log
+    const updateLogBtn = document.getElementById('updateLogBtn');
+    if (updateLogBtn) {
+      updateLogBtn.addEventListener('click', function() {
+        const updateLogModal = document.getElementById('updateLogModal');
+        if (updateLogModal) {
+          updateLogModal.style.display = 'flex';
+        }
+      });
+    }
+
+    // Button to manually open credits
+    const creditsBtn = document.getElementById('creditsBtn');
+    if (creditsBtn) {
+      creditsBtn.addEventListener('click', function() {
+        const creditsModal = document.getElementById('creditsModal');
+        if (creditsModal) {
+          creditsModal.style.display = 'flex';
+        }
+      });
+    }
+  </script>
+
   <!-- Debug helper -->
   <script>
     console.log('Page loaded, checking for games data...');
