@@ -301,14 +301,9 @@
       <div id="content-home" class="content">
         <!-- Featured Section -->
         <div class="featured-section">
-          <h2>🎮 Welcome to Relic</h2>
-          
-          <!-- Notes Box -->
-          <div class="notes-box">
-            <h5>Jacob pls have my lanyard</h5>
-            <h5>Thanks for the hellcat Fabian</h5>
-            <h5>Joseluis gave me my shorts ❤️‍🩹</h5>
-            <h5>David</h5>
+          <div class="relic-logo-container">
+            <img src="others/assets/relic.webp" alt="Relic Logo" class="relic-logo-image">
+            <h2 class="relic-title">Relic Ultimate</h2>
           </div>
           
           <p style="font-size: 14px; opacity: 0.8; margin-top: 10px;">
@@ -719,6 +714,59 @@
         });
       }
 
+      // Focus input when search page is shown
       const searchLink = document.getElementById('searchLink');
       if (searchLink) {
-        searchLink.
+        searchLink.addEventListener('click', () => {
+          setTimeout(() => {
+            if (urlInput) urlInput.focus();
+          }, 100);
+        });
+      }
+
+      console.log('Proxy browser initialized with URL:', PROXY_URL);
+    })();
+  </script>
+
+  <!-- Iframe control functions -->
+  <script>
+    function reload() {
+      const iframe = document.querySelector("iframe");
+      if (iframe) {
+        try {
+          iframe.contentWindow.location.reload(true);
+        } catch (error) {
+          console.log('Reloading iframe via src...', error);
+          iframe.src = iframe.src;
+        }
+      } else {
+        console.warn('No iframe found to reload');
+      }
+    }
+
+    function historyBack() {
+      const iframe = document.querySelector("iframe");
+      if (iframe) {
+        try {
+          iframe.contentWindow.history.back();
+        } catch (error) {
+          console.warn('Cannot navigate back in iframe:', error);
+        }
+      }
+    }
+
+    function historyForward() {
+      const iframe = document.querySelector("iframe");
+      if (iframe) {
+        try {
+          iframe.contentWindow.history.forward();
+        } catch (error) {
+          console.warn('Cannot navigate forward in iframe:', error);
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>
