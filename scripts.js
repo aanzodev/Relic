@@ -146,12 +146,12 @@ function applyTheme(themeName) {
       border: '#3b82f6'
     },
     'dark': {
-      bg: '#0f172a',
-      sidebar: '#1e293b',
+      bg: '#000000',
+      sidebar: '#4f4f4f',
       nav: '#1e293b',
-      text: '#f1f5f9',
+      text: '#ffffff',
       accent: '#38bdf8',
-      border: '#334155'
+      border: '#8f8f8f'
     },
     'light': {
       bg: '#f8fafc',
