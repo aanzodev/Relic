@@ -1,11 +1,7 @@
-// GalaxyVerse Console System
-// Path: others/assets/scripts/console.js
-
-// Prevent multiple declarations
-if (window.GVerseConsole) {
-  console.warn('GVerseConsole already initialized');
+if (window.RelicConsole) {
+  console.warn('RelicConsole already initialized');
 } else {
-  window.GVerseConsole = {
+  window.RelicConsole = {
     isOpen: false,
     logs: [],
     currentFilter: 'all',
@@ -17,7 +13,7 @@ if (window.GVerseConsole) {
     init() {
       // Prevent double initialization
       if (this.initialized) {
-        console.warn('GVerseConsole already initialized');
+        console.warn('RelicConsole already initialized');
         return;
       }
       this.initialized = true;
@@ -25,7 +21,7 @@ if (window.GVerseConsole) {
       // Create console HTML structure
       this.createConsoleHTML();
       
-      this.container = document.getElementById('gverse-console');
+      this.container = document.getElementById('Relic-console');
       this.output = document.getElementById('console-output');
       this.input = document.getElementById('console-input');
 
@@ -75,16 +71,16 @@ if (window.GVerseConsole) {
 
     createConsoleHTML() {
       const consoleHTML = `
-        <div id="gverse-console">
+        <div id="Relic-console">
           <div class="console-header">
             <div class="console-title">
               <span>🌌</span>
               <span>GalaxyVerse Console</span>
             </div>
             <div class="console-controls">
-              <button class="console-btn" onclick="GVerseConsole.clear()">Clear</button>
-              <button class="console-btn" onclick="GVerseConsole.export()">Export</button>
-              <button class="console-close" onclick="GVerseConsole.close()">×</button>
+              <button class="console-btn" onclick="RelicConsole.clear()">Clear</button>
+              <button class="console-btn" onclick="RelicConsole.export()">Export</button>
+              <button class="console-close" onclick="RelicConsole.close()">×</button>
             </div>
           </div>
 
@@ -343,8 +339,8 @@ if (window.GVerseConsole) {
 
   // Initialize console as early as possible
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => window.GVerseConsole.init());
+    document.addEventListener('DOMContentLoaded', () => window.RelicConsole.init());
   } else {
-    window.GVerseConsole.init();
+    window.RelicConsole.init();
   }
 }
