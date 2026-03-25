@@ -29,7 +29,6 @@ body::before {
   pointer-events: none;
 }
 
-/* Relic Logo Container - New Styles */
 .relic-logo-container {
   display: flex;
   flex-direction: column;
@@ -97,7 +96,6 @@ body::before {
   }
 }
 
-/* Navbar - kept but hidden */
 .navbar {
   display: none !important;
 }
@@ -115,7 +113,6 @@ body::before {
   text-decoration: none;
 }
 
-/* Game Filters - more casual spacing */
 .game-filters {
   display: flex;
   gap: 10px;
@@ -151,7 +148,6 @@ body::before {
   color: white;
 }
 
-/* Favorite Button - simpler */
 .favorite-btn {
   position: absolute;
   top: 10px;
@@ -189,7 +185,6 @@ body::before {
   border-color: #ffd700;
 }
 
-/* Settings Page - less uniform */
 .settings-page-container {
   max-width: 850px;
   margin: 32px auto;
@@ -317,7 +312,6 @@ body::before {
   border-color: var(--accent-color);
 }
 
-/* Modals - cleaner design */
 .info-modal {
   display: none;
   position: fixed;
@@ -468,7 +462,6 @@ body::before {
   background: var(--hover-bg);
 }
 
-/* Homepage Info Buttons - asymmetric positioning */
 .homepage-info-buttons {
   position: fixed;
   bottom: 32px;
@@ -505,7 +498,6 @@ body::before {
   transform: translateY(-1px);
 }
 
-/* Container and Content */
 .container {
   max-width: 1400px;
   margin: 20px auto;
@@ -528,7 +520,6 @@ body::before {
   }
 }
 
-/* Game and App Grids - less uniform */
 .game-grid, .app-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -588,7 +579,6 @@ body::before {
   user-select: none;
 }
 
-/* Search Container */
 .search-container {
   display: flex;
   justify-content: center;
@@ -634,7 +624,6 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* Back Buttons */
 #backToHomeApps,
 #backToHomeGame,
 #backToHomeWebsites {
@@ -657,7 +646,6 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* Game Play Area */
 .game-play-area {
   background: #000;
   border: 2px solid var(--glass-border);
@@ -697,7 +685,6 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .relic-logo-image {
     width: 80px;
