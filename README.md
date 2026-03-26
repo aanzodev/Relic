@@ -1,7 +1,15 @@
 <p align="center"><img src="https://github.com/aanzoski/relic/blob/main/others/assets/relic.webp?raw=true" height="180">
 
-<h1 align="center"><strong>Relic Ultimate</strong></h1>
-<h3 align="center"><a href="https://dsc.gg/galaxyproxi">Discord Server</a></h3>
+
+
+
+<h1 align="center"><strong>Relic Network</strong></h1>
+<h3 align="center"><a href="https://dsc.gg/relicoffical">Discord Server</a></h3>
+
+
+# Info:
+This is only used for tests and will never get a full version update. New site is not open sourced.
+This will probably be the last change on this so thanks for the support on Relic Ultimate
 
 ### Contributors:
 - <a href="https://dsc.gg/galaxyproxi">GalaxyVerse</a> (Archived)
